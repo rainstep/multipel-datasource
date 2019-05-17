@@ -60,7 +60,7 @@ public class BaseService {
     }
 
     @Transactional
-    public void save(String nameA1, String nameA2, String nameB1) {
+    public void save(String nameA1, String nameB1, String nameA2) {
         this.addA1(nameA1);
         this.addB1(nameB1);
         this.addA2(nameA2);
