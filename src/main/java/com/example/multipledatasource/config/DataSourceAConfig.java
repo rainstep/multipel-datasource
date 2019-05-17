@@ -18,7 +18,7 @@ import javax.sql.DataSource;
 @Configuration
 @MapperScan(value = "com.example.multipledatasource.mapper.a"
         , sqlSessionFactoryRef = "sqlSessionFactoryA"
-        , sqlSessionTemplateRef = "sqlSessionTemplateA"
+//        , sqlSessionTemplateRef = "sqlSessionTemplateA"
 )
 public class DataSourceAConfig {
 
@@ -37,11 +37,11 @@ public class DataSourceAConfig {
         return sqlSessionFactoryBean.getObject();
     }
 
-    @Bean
-    public SqlSessionTemplate sqlSessionTemplateA() throws Exception {
-        SqlSessionTemplate sqlSessionTemplate = new SqlSessionTemplate(sqlSessionFactoryA());
-        return sqlSessionTemplate;
-    }
+//    @Bean
+//    public SqlSessionTemplate sqlSessionTemplateA() throws Exception {
+//        SqlSessionTemplate sqlSessionTemplate = new SqlSessionTemplate(sqlSessionFactoryA());
+//        return sqlSessionTemplate;
+//    }
 
     @Bean
     @Primary

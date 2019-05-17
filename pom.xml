@@ -38,7 +38,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <!--<scope>runtime</scope>-->
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -58,7 +58,7 @@
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.3.5</version>
+                <version>1.3.7</version>
                 <configuration>
                     <overwrite>true</overwrite>
                     <configurationFile>src/main/resources/generatorConfigB.xml</configurationFile>
@@ -73,6 +73,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>
