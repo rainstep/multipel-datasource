@@ -5,18 +5,12 @@ import com.example.multipledatasource.mapper.a.TableA2Mapper;
 import com.example.multipledatasource.mapper.b.TableB1Mapper;
 import com.example.multipledatasource.mapper.b.TableB2Mapper;
 import com.example.multipledatasource.model.a.TableA1;
-import com.example.multipledatasource.model.a.TableA1Example;
 import com.example.multipledatasource.model.a.TableA2;
-import com.example.multipledatasource.model.a.TableA2Example;
 import com.example.multipledatasource.model.b.TableB1;
-import com.example.multipledatasource.model.b.TableB1Example;
 import com.example.multipledatasource.model.b.TableB2;
-import com.example.multipledatasource.model.b.TableB2Example;
-import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import java.util.List;
 
 @Service
 public class BaseService {
@@ -29,52 +23,28 @@ public class BaseService {
     @Autowired
     TableB2Mapper tableB2Mapper;
 
-    public List<TableA1> a1List() {
-        List<TableA1> list = tableA1Mapper.selectByExample(new TableA1Example());
-        return list;
-    }
-
-    public List<TableA2> a2List() {
-        List<TableA2> list = tableA2Mapper.selectByExample(new TableA2Example());
-        return list;
-    }
-
-    public List<TableB1> b1List() {
-        List<TableB1> list = tableB1Mapper.selectByExample(new TableB1Example());
-        return list;
-    }
-
-    public List<TableB2> b2List() {
-        List<TableB2> list = tableB2Mapper.selectByExample(new TableB2Example());
-        return list;
-    }
-
-    public List<TableA1> addA1(String name) {
+    public void addA1(String name) {
         TableA1 tableA1 = new TableA1();
         tableA1.setName(name);
         tableA1Mapper.insertSelective(tableA1);
-        return a1List();
     }
 
-    public List<TableA2> addA2(String name) {
+    public void addA2(String name) {
         TableA2 tableA2 = new TableA2();
         tableA2.setName(name);
         tableA2Mapper.insertSelective(tableA2);
-        return a2List();
     }
 
-    public List<TableB1> addB1(String name) {
+    public void addB1(String name) {
         TableB1 tableB1 = new TableB1();
         tableB1.setName(name);
         tableB1Mapper.insertSelective(tableB1);
-        return b1List();
     }
 
-    public List<TableB2> addB2(String name) {
+    public void addB2(String name) {
         TableB2 tableB2 = new TableB2();
         tableB2.setName(name);
         tableB2Mapper.insertSelective(tableB2);
-        return b2List();
     }
 
     @Transactional("transactionManagerA")
