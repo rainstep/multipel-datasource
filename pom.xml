@@ -61,7 +61,8 @@
                 <version>1.3.7</version>
                 <configuration>
                     <overwrite>true</overwrite>
-                    <configurationFile>src/main/resources/generatorConfigB.xml</configurationFile>
+                    <configurationFile>src/main/resources/generatorConfigA.xml</configurationFile>
+<!--                    <configurationFile>src/main/resources/generatorConfigB.xml</configurationFile>-->
                 </configuration>
                 <dependencies>
                     <dependency>
